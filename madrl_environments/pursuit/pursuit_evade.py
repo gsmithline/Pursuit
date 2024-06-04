@@ -549,12 +549,13 @@ class PursuitEvade(AbstractMAEnv, EzPickle):
         # return the index of a state
         # assume single evader for now
         pos = np.unravel_index(idx, [self.xs, self.ys] * (self.n_evaders + self.n_pursuers), 'F')
-        s = np.zeros(self.model_state.shape)
+        ss = np.zeros(self.model_state.shape)
         
-        return s
+        return ss
 
 
     def n_states(self):
         return (self.xs * self.ys) ** (self.n_evaders + self.n_pursuers)
 
 
+      
